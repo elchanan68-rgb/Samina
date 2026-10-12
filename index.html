@@ -27,6 +27,7 @@
         </a>
         <nav class="nav" aria-label="ניווט ראשי">
           <a href="#tracker">טבלת האימונים</a>
+          <a href="#shared-workout">האימון המשותף</a>
           <a href="#ideas">רעיונות לאימון</a>
         </nav>
         <a class="topbar-cta" href="#tracker">יאללה, מתאמנים <span aria-hidden="true">←</span></a>
@@ -114,6 +115,54 @@
             </table>
           </div>
           <p class="table-footnote"><span aria-hidden="true">💡</span> נרשם אימון בטעות? אפשר למחוק אותו מרשימת האימונים האחרונים.</p>
+        </section>
+
+        <section class="shared-panel" id="shared-workout" aria-labelledby="shared-title">
+          <div class="shared-heading">
+            <div>
+              <p class="section-kicker">נפגשים, זזים, נהנים</p>
+              <h2 id="shared-title">האימון המשותף שלנו <span aria-hidden="true">🤝</span></h2>
+              <p class="section-description">קובעים יום, צופים בסרטון של גל ויוצאים להתאמן ביחד.</p>
+            </div>
+            <span class="shared-badge"><span aria-hidden="true">✦</span> אפשר לשנות יום בכל שבוע</span>
+          </div>
+
+          <div class="shared-calendar-wrap">
+            <div class="calendar-heading">
+              <div>
+                <h3>הלוח השבועי</h3>
+                <p>לחצו על יום כדי לקבוע או להעביר אליו את האימון</p>
+              </div>
+              <span class="calendar-week-label" id="shared-week-label"></span>
+            </div>
+            <div class="calendar-grid" id="shared-calendar" role="group" aria-label="בחירת יום האימון המשותף"></div>
+          </div>
+
+          <div class="shared-details">
+            <div class="shared-plan">
+              <div class="plan-icon" aria-hidden="true">🗓️</div>
+              <div class="plan-copy">
+                <span>האימון המשותף מתוכנן ל־</span>
+                <strong id="shared-day-label">יום שלישי</strong>
+              </div>
+              <button class="complete-button" id="shared-complete" type="button">סמנו שהתקיים <span aria-hidden="true">✓</span></button>
+            </div>
+
+            <form class="video-form" id="coach-video-form">
+              <label for="coach-video-url"><span aria-hidden="true">▶️</span> הסרטון של גל המאמן</label>
+              <p>יש לכם קישור לסרטון? שמרו אותו כאן כדי שכולם יוכלו לפתוח.</p>
+              <div class="video-input-row">
+                <input id="coach-video-url" name="coach-video-url" type="url" inputmode="url" placeholder="מדביקים כאן קישור מ־YouTube" autocomplete="url" />
+                <button class="save-video-button" type="submit">שמירת קישור</button>
+              </div>
+              <a class="coach-video-link" id="coach-video-link" target="_blank" rel="noopener noreferrer" hidden>פתיחת הסרטון של גל <span aria-hidden="true">↗</span></a>
+              <div class="coach-video-embed" id="coach-video-embed" hidden>
+                <iframe id="coach-video-frame" title="סרטון האימון של גל המאמן" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+              <span class="video-status" id="video-status" role="status" aria-live="polite"></span>
+            </form>
+          </div>
+          <p class="shared-note"><span aria-hidden="true">ℹ️</span> הסימונים וקישור הסרטון נשמרים בדפדפן הזה. כדי שכולם יראו את אותם עדכונים ממכשירים שונים, צריך להוסיף לאתר אחסון משותף.</p>
         </section>
 
         <section class="lower-grid">
