@@ -3,94 +3,153 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>סמינה עדי ולביא| ברוך הבא</title>
+    <meta name="theme-color" content="#101a18" />
     <meta
       name="description"
-      content="דף נחיתה יוקרתי למשפחת סמינה"
+      content="טבלת האימונים השבועית של אלחנן, אליה, יוסי ונתן. מתאמנים ביחד ומסמנים כל אימון."
     />
+    <title>החבורה בתנועה | מעקב אימונים</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="page-shell">
+    <div class="site-shell">
       <header class="topbar">
-        <div class="brand">סמינה</div>
-        <nav class="nav" aria-label="ניווט">
-          <a href="#about">אודות</a>
-          <a href="#story">הסיפור</a>
-          <a href="#join">הצטרפו</a>
+        <a class="brand" href="#top" aria-label="החבורה בתנועה - לראש העמוד">
+          <span class="brand-mark" aria-hidden="true">⚡</span>
+          <span>החבורה<span class="brand-accent"> בתנועה</span></span>
+        </a>
+        <nav class="nav" aria-label="ניווט ראשי">
+          <a href="#tracker">טבלת האימונים</a>
+          <a href="#ideas">רעיונות לאימון</a>
         </nav>
+        <a class="topbar-cta" href="#tracker">יאללה, מתאמנים <span aria-hidden="true">←</span></a>
       </header>
 
-      <main>
-        <section class="hero">
-          <div class="hero-content">
-            <p class="eyebrow">משפחה • בריאות • אהבה</p>
-            <h1>ברוך הבא למשפחת סמינה</h1>
-            <p class="subtitle">
-              מקום שבו נבנה חיבור, שמחה ותחושת שייכות עם כל אחד מאיתנו.
+      <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> ארבעה חברים. מטרה אחת.</p>
+            <h1 id="hero-title">מתקדמים<br />צעד <span>אחד בכל פעם.</span></h1>
+            <p class="hero-description">
+              כל אימון נחשב. בוחרים את השם, מסמנים מה עשיתם, ובונים שבוע חזק ביחד.
             </p>
-            <div class="actions">
-              <a class="primary" href="#join">הצטרפו עכשיו</a>
-              <a class="secondary" href="#about">לגלות עוד</a>
+            <a class="button button-primary" href="#tracker">לוח התוצאות שלנו <span aria-hidden="true">↓</span></a>
+            <div class="hero-footnote"><span aria-hidden="true">✦</span> בלי תחרות, רק עידוד הדדי</div>
+          </div>
+
+          <div class="hero-art" aria-label="איור של נעלי ספורט">
+            <div class="art-orbit orbit-one"></div>
+            <div class="art-orbit orbit-two"></div>
+            <div class="art-glow"></div>
+            <div class="art-number">01</div>
+            <div class="shoe" aria-hidden="true">👟</div>
+            <div class="art-caption"><span>הדרך שלכם</span><strong>מתחילה היום</strong></div>
+            <span class="art-spark spark-one" aria-hidden="true">✳</span>
+            <span class="art-spark spark-two" aria-hidden="true">✦</span>
+          </div>
+        </section>
+
+        <section class="stats-grid" aria-label="סיכום השבוע">
+          <article class="stat-card stat-highlight">
+            <span class="stat-icon" aria-hidden="true">🏁</span>
+            <div><p>אימונים השבוע</p><strong id="total-workouts">0</strong></div>
+            <span class="stat-note">של כל החבורה</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-icon" aria-hidden="true">🙌</span>
+            <div><p>כבר התחילו לזוז</p><strong id="active-members">0<span class="stat-suffix">/4</span></strong></div>
+            <span class="stat-note">כל אחד בקצב שלו</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-icon" aria-hidden="true">🎯</span>
+            <div><p>יעד קבוצתי</p><strong>12</strong></div>
+            <span class="stat-note">אימונים בשבוע</span>
+          </article>
+        </section>
+
+        <section class="tracker-section" id="tracker" aria-labelledby="tracker-title">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">המעקב השבועי שלנו</p>
+              <h2 id="tracker-title">כל אימון נכנס לטבלה</h2>
+              <p class="section-description">בחרו סוג אימון ולחצו על הכפתור. זה הכול!</p>
+            </div>
+            <div class="week-controls" aria-label="בחירת שבוע">
+              <button class="week-arrow" id="previous-week" type="button" aria-label="השבוע הקודם">→</button>
+              <div class="week-display">
+                <span class="week-icon" aria-hidden="true">▦</span>
+                <span id="week-label" aria-live="polite"></span>
+              </div>
+              <button class="week-arrow" id="next-week" type="button" aria-label="השבוע הבא">←</button>
+              <button class="today-button" id="current-week" type="button">השבוע</button>
             </div>
           </div>
 
-          <div class="hero-card" aria-label="כרטיס משפחתי">
-            <div class="card-badge">המשפחה שלנו</div>
-            <div class="card-title">סמינה</div>
-            <ul>
-              <li>קשר חם</li>
-              <li>אווירה נעימה</li>
-              <li>רגעים יפים</li>
-            </ul>
+          <div class="goal-wrap">
+            <div class="goal-copy"><span>היעד השבועי של החבורה</span><strong id="goal-count">0 מתוך 12</strong></div>
+            <div class="progress-track" role="progressbar" aria-label="התקדמות לעבר יעד האימונים השבועי" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0" id="goal-progress">
+              <span id="goal-progress-fill"></span>
+            </div>
           </div>
-        </section>
 
-        <section id="about" class="info-grid">
-          <article class="info-card">
-            <span class="icon">💛</span>
-            <h2>אהבה</h2>
-            <p>סביבה שמרגישה בית, מלאה בחום ובשייכות.</p>
-          </article>
+          <p class="notice" id="storage-notice" role="status" aria-live="polite" hidden></p>
 
-          <article class="info-card">
-            <span class="icon">🌿</span>
-            <h2>בריאות</h2>
-            <p>כוח ואנרגיה שמגיעים מתוך הרגלים טובים ושגרה מדויקת.</p>
-          </article>
-
-          <article class="info-card">
-            <span class="icon">✨</span>
-            <h2>תקווה</h2>
-            <p>כל יום הוא הזדמנות לבנות עתיד טוב יותר יחד.</p>
-          </article>
-        </section>
-
-        <section id="story" class="story">
-          <div class="story-text">
-            <p class="section-tag">הסיפור שלנו</p>
-            <h2>ביחד אנחנו יוצרים חוויות שמשאירות חותם</h2>
-            <p>
-              סמינה מציעה מסע של חיבור, התפתחות והזדמנויות חדשות. אנחנו מאמינים
-              שבמשפחה, בכל רגע קטן, נוצרת תחושת משמעות גדולה.
-            </p>
+          <div class="table-scroll">
+            <table class="workout-table">
+              <thead>
+                <tr>
+                  <th scope="col">המתאמן</th>
+                  <th scope="col">כמה אימונים?</th>
+                  <th scope="col">מוסיפים אימון</th>
+                </tr>
+              </thead>
+              <tbody id="members-table"></tbody>
+            </table>
           </div>
+          <p class="table-footnote"><span aria-hidden="true">💡</span> נרשם אימון בטעות? אפשר למחוק אותו מרשימת האימונים האחרונים.</p>
         </section>
 
-        <section id="join" class="cta">
-          <h2>מוכנים להצטרף?</h2>
-          <p>בואו להיות חלק מהמסע המיוחד של משפחת סמינה.</p>
-          <a href="mailto:hello@samina.example">צור קשר</a>
+        <section class="lower-grid">
+          <div class="activity-panel" aria-labelledby="activity-title">
+            <div class="panel-heading">
+              <div>
+                <p class="section-kicker">רגעים של תנועה</p>
+                <h2 id="activity-title">האימונים האחרונים</h2>
+              </div>
+              <span class="panel-icon" aria-hidden="true">↗</span>
+            </div>
+            <ul class="activity-list" id="activity-list" aria-live="polite"></ul>
+          </div>
+
+          <aside class="ideas-panel" id="ideas" aria-labelledby="ideas-title">
+            <p class="section-kicker">צריכים קצת השראה?</p>
+            <h2 id="ideas-title">כל תנועה נחשבת.</h2>
+            <p class="ideas-description">לא חייבים חדר כושר. בוחרים משהו שכיף לכם ועושים אותו ביחד.</p>
+            <div class="idea-tags">
+              <span>🏋️ אימון כוח</span>
+              <span>🏃 ריצה</span>
+              <span>🚶 הליכה</span>
+              <span>🚴 אופניים</span>
+              <span>⚽ משחק כדור</span>
+              <span>🧘 אימון אחר</span>
+            </div>
+            <div class="ideas-footer"><span aria-hidden="true">✦</span> העיקר לזוז, השאר כבר יגיע.</div>
+          </aside>
         </section>
+
+        <footer class="footer">
+          <a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true">⚡</span><span>החבורה<span class="brand-accent"> בתנועה</span></span></a>
+          <p>מתחזקים ביחד, אימון אחרי אימון.</p>
+          <span class="footer-heart" aria-label="באהבה">♥</span>
+        </footer>
       </main>
     </div>
-
-    <script src="script.js"></script>
   </body>
 </html>
